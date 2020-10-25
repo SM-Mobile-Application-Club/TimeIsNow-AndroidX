@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TimeIsNow</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splashlogo">SplashLogo</string>
+    <string name="the_present">The Present</string>
+    <string name="the_time_manager_that_keeps_you_productive">The Time Manager that Keeps You Productive</string>
+    <string name="go">GO</string>
+    <string name="new_user_sign_up">New User? Sign UP</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="welcome">Welcome</string>
+    <string name="sign_up_to_start_your_journey">Sign Up to Start your Journey</string>
+    <string name="full_name">Full Name</string>
+    <string name="already_have_an_account_log_in">Already have an account? Log In</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="sign_in_to_continue">Sign In to Continue</string>
+    <string name="hello_there_welcome_back">Hello there, Welcome Back</string>
+</resources>

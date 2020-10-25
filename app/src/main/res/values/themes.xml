@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.TimeIsNow" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#ffffff</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@color/appBackgroundThemeRed</item>
+        <item name="android:colorBackground">@color/appBackgroundThemeRed</item>
+    </style>
+
+    <!-- Menu Style -->
+    <style name="navigationTheme">
+
+        <!-- Color of text and icon when SELECTED -->
+        <item name="colorPrimary">@color/appSecondaryColorRed</item>
+        <!-- Background color when Selected -->
+        <item name="colorControlHighlight">#ffffff</item>
+
+    </style>
+
+</resources>

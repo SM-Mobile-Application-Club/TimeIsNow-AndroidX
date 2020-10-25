@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "androidx.navigation.safeargs"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.MAD.TimeIsNow"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.2.1'
+
+   // Android Test
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Android X
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.navigation:navigation-fragment:2.3.1"
+    implementation "androidx.navigation:navigation-ui:2.3.1"
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    // Misc
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Play Services
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+
+    // Desugar
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
+    implementation 'com.google.firebase:firebase-analytics:17.6.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
+    implementation 'com.google.firebase:firebase-dynamic-links:19.1.1'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    //OTP PIN View Design
+    implementation 'com.chaos.view:pinview:1.4.3'
+    //for Image Downloading
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //Progress Button
+    implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
+    // GSON Serialization
+    implementation 'com.google.code.gson:gson:2.8.6'
+    // OKHTTP
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    // Phone Number
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.8'
+}
