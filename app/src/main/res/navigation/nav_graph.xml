@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/splashFragment">
 
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.MAD.TimeIsNow.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_signInFragment"
+            app:destination="@id/authentication" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.MAD.TimeIsNow.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_OTPFragment" app:destination="@id/password_reset" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.MAD.TimeIsNow.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <navigation android:id="@+id/password_reset"
+        app:startDestination="@id/forgetPasswordFragment">
+        <fragment
+            android:id="@+id/forgetPasswordFragment"
+            android:name="com.MAD.TimeIsNow.ForgetPasswordFragment"
+            android:label="fragment_forget_password"
+            tools:layout="@layout/fragment_forget_password"/>
+        <fragment
+            android:id="@+id/OTPFragment"
+            android:name="com.MAD.TimeIsNow.OTPFragment"
+            android:label="fragment_o_t_p"
+            tools:layout="@layout/fragment_o_t_p">
+            <action
+                android:id="@+id/action_OTPFragment_to_setPasswordFragment"
+                app:destination="@id/setPasswordFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/setPasswordFragment"
+            android:name="com.MAD.TimeIsNow.SetPasswordFragment"
+            android:label="fragment_set_password"
+            tools:layout="@layout/fragment_set_password">
+            <action
+                android:id="@+id/action_setPasswordFragment_to_passwordSuccessFragment"
+                app:destination="@id/passwordSuccessFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/passwordSuccessFragment"
+            android:name="com.MAD.TimeIsNow.PasswordSuccessFragment"
+            android:label="fragment_password_success"
+            tools:layout="@layout/fragment_password_success">
+            <action
+                android:id="@+id/action_passwordSuccessFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
+        </fragment>
+        <action android:id="@+id/action_global_OTPFragment2" app:destination="@id/OTPFragment" />
+    </navigation>
+    <navigation android:id="@+id/authentication"
+        app:startDestination="@id/signInFragment">
+        <fragment
+            android:id="@+id/signUpFragment"
+            android:name="com.MAD.TimeIsNow.SignUpFragment"
+            android:label="fragment_sign_up"
+            tools:layout="@layout/fragment_sign_up">
+            <action
+                android:id="@+id/action_signUpFragment_to_signInFragment"
+                app:destination="@id/signInFragment" />
+            <action
+                android:id="@+id/action_signUpFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/signInFragment"
+            android:name="com.MAD.TimeIsNow.SignInFragment"
+            android:label="fragment_sign_in"
+            tools:layout="@layout/fragment_sign_in">
+            <action
+                android:id="@+id/action_signInFragment_to_signUpFragment"
+                app:destination="@id/signUpFragment" />
+            <action
+                android:id="@+id/action_signInFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
+            <action
+                android:id="@+id/action_signInFragment_to_forgetPasswordFragment"
+                app:destination="@id/password_reset" />
+        </fragment>
+    </navigation>
 </navigation>
