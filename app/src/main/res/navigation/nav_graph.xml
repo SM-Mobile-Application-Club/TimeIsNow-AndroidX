@@ -57,6 +57,10 @@
             <action
                 android:id="@+id/action_setPasswordFragment_to_passwordSuccessFragment"
                 app:destination="@id/passwordSuccessFragment" />
+            <deepLink
+                android:id="@+id/deepLink"
+                android:autoVerify="true"
+                app:uri="https://thepresent.page.link?link=https://calendar-286222.firebaseapp.com/" />
         </fragment>
         <fragment
             android:id="@+id/passwordSuccessFragment"
