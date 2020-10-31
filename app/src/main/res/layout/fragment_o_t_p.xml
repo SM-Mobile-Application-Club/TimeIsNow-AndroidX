@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".OTPFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
 
+        <ImageView
+            android:id="@+id/imageView_verifyBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_betterclose"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-60dp"
+            android:layout_marginBottom="-60dp"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="true"
+            android:text="Co\nde"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="#000"
+            android:textSize="100sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="false"
+            android:textAllCaps="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textView_phoneNumberDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter One Time Password sent to +1123456789"
+            android:layout_marginTop="50dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:fontFamily="@font/mulish"
+            android:includeFontPadding="false"
+            android:layout_gravity="center"/>
+
+        <com.chaos.view.PinView
+            android:id="@+id/firstPinView"
+            style="@style/PinWidget.PinView"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:hint="Hint."
+            app:cursorColor="#000"
+            android:inputType="number"
+            android:itemBackground="#F0EEEB"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:itemCount="6"
+            app:itemHeight="50dp"
+            app:itemRadius="5dp"
+            app:itemSpacing="4dp"
+            app:itemWidth="50dp"
+            android:layout_gravity="center"
+            app:lineWidth="2dp"
+            app:lineColor="#000"
+            app:viewType="rectangle"
+            app:hideLineWhenFilled="true" />
+
+        <Button
+            android:id="@+id/button_resendCODE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Resend Code"
+            android:textAllCaps="false"
+            android:background="@android:color/transparent"/>
+
+        <Button
+            android:id="@+id/button_VerifyPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:background="#F2CA67"
+            android:layout_marginTop="10dp"
+            android:textColor="#000"/>
+
+    </LinearLayout>
 </FrameLayout>

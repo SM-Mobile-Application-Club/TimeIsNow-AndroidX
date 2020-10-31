@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeIsNow">
         <activity android:name=".MainActivity">
+            <nav-graph android:value="@navigation/nav_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="thepresent.page.link"/>
             </intent-filter>
         </activity>
     </application>
