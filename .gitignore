@@ -90,3 +90,7 @@ lint/tmp/
 .idea/*
 .gradle/
 .grade/*
+.settings/
+.settings/*
+.project
+.DS_Store
