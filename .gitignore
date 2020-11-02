@@ -83,3 +83,10 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+.vscode/
+.vscode/*
+.idea/
+.idea/*
+.gradle/
+.grade/*
