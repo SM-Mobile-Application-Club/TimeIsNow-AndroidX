@@ -3,12 +3,251 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+        <LinearLayout
+            android:id="@+id/profileContentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:padding="20dp"
+                android:background="@color/appSecondaryColorRed">
+
+                <ImageView
+                    android:id="@+id/imageView_menu1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_action_menu"/>
+
+                <ImageView
+                    android:id="@+id/imageView_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    android:src="@drawable/betterprofile"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView_profile"
+                    android:text="Click to Change"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/textView_fullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:includeFontPadding="false"
+                    android:textColor="#000"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/imageView_profile"
+                    android:fontFamily="@font/bungee"
+                    android:text="Evan Lai"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="-50dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/appSecondaryColorRed"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_action_tasks"/>
+                        <TextView
+                            android:id="@+id/textView_taskLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20"
+                            android:textColor="#000"
+                            android:textSize="20sp"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/bungee"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:id="@+id/textView_taskDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tasks Completed"
+                            android:textSize="14sp"
+                            android:includeFontPadding="false"
+                            android:layout_below="@id/textView_taskLabel"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/appSecondaryColorRed"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_action_star"/>
+                        <TextView
+                            android:id="@+id/textView_consistencyLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="90%"
+                            android:textSize="20sp"
+                            android:includeFontPadding="false"
+                            android:textColor="#000"
+                            android:fontFamily="@font/bungee"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:id="@+id/textView_consistencyDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Consistency"
+                            android:textSize="14sp"
+                            android:includeFontPadding="false"
+                            android:layout_below="@id/textView_consistencyLabel"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/textView_nameLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name"/>
+
+                    <EditText
+                        android:id="@+id/editText_fullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:drawableLeft="@drawable/ic_action_betteruser"
+                        android:drawablePadding="10dp"
+                        android:inputType="textPersonName"
+                        android:text="Evan Lai"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/textView_emailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"/>
+
+
+                    <EditText
+                        android:id="@+id/editText_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_action_emial"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:text="22laie@smtexas.org"
+                        android:inputType="textEmailAddress"/>
+
+                    <TextView
+                        android:id="@+id/textView_phoneLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"/>
+
+                    <EditText
+                        android:id="@+id/editText_phoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:drawableLeft="@drawable/ic_action_phone"
+                        android:drawablePadding="10dp"
+                        android:inputType="phone"
+                        android:text="+1-123-456-789"
+                        android:layout_marginBottom="10dp"/>
+                    <TextView
+                        android:id="@+id/textView_passwordLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="New Password"/>
+
+                    <EditText
+                        android:id="@+id/editText_newPasswordChange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:drawableLeft="@drawable/ic_action_darkpass"
+                        android:drawablePadding="10dp"
+                        android:inputType="textPersonName"
+                        android:layout_marginBottom="10dp"/>
+
+                    <Button
+                        android:id="@+id/button_changeProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/appSecondaryColorRed"
+                        android:fontFamily="@font/bungee"
+                        android:text="Update"
+                        android:textColor="#000" />
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
 
 </FrameLayout>
