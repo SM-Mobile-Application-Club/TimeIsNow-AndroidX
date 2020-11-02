@@ -9,6 +9,7 @@
         android:id="@+id/splashFragment"
         android:name="com.MAD.TimeIsNow.SplashFragment"
         android:label="fragment_splash"
+<<<<<<< Updated upstream
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_signInFragment"
@@ -103,4 +104,7 @@
                 app:destination="@id/password_reset" />
         </fragment>
     </navigation>
+=======
+        tools:layout="@layout/fragment_splash" />
+>>>>>>> Stashed changes
 </navigation>
