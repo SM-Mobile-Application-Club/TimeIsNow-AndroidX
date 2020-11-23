@@ -183,7 +183,6 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
                                     Snackbar.make(getView(), "Account disabled", Snackbar.LENGTH_SHORT).show();
                                     break;
                             }
-                            if (!task.isSuccessful()) Snackbar.make(getView(), "Something went wrong...", Snackbar.LENGTH_SHORT).show();
                         }
                     }
                 });
