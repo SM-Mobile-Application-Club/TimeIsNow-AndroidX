@@ -165,7 +165,8 @@
                         android:id="@+id/textView_nameLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Full Name"/>
+                        android:textColor="@color/black"
+                        android:text="Full Name"/>
 
                     <EditText
                         android:id="@+id/editText_fullName"
@@ -173,17 +174,19 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:drawableLeft="@drawable/ic_action_betteruser"
+                        android:drawableStart="@drawable/ic_action_betteruser"
                         android:drawablePadding="10dp"
                         android:inputType="textPersonName"
                         android:text="Evan Lai"
+                        android:textColor="#000"
                         android:layout_marginBottom="10dp"/>
 
                     <TextView
                         android:id="@+id/textView_emailLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Email"/>
+                        android:textColor="@color/black"
+                        android:text="Email"/>
 
 
                     <EditText
@@ -192,7 +195,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
-                        android:drawableLeft="@drawable/ic_action_emial"
+                        android:textColor="@color/black"
+                        android:drawableStart="@drawable/ic_action_emial"
                         android:drawablePadding="10dp"
                         android:ems="10"
                         android:text="22laie@smtexas.org"
@@ -202,7 +206,8 @@
                         android:id="@+id/textView_phoneLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Phone Number"/>
+                        android:text="Phone Number"
+                        android:textColor="@color/black"/>
 
                     <EditText
                         android:id="@+id/editText_phoneNumber"
@@ -210,7 +215,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:drawableLeft="@drawable/ic_action_phone"
+                        android:textColor="@color/black"
+                        android:drawableStart="@drawable/ic_action_phone"
                         android:drawablePadding="10dp"
                         android:inputType="phone"
                         android:text="+1-123-456-789"
@@ -219,7 +225,8 @@
                         android:id="@+id/textView_passwordLabel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="New Password"/>
+                        android:textColor="@color/black"
+                        android:text="New Password"/>
 
                     <EditText
                         android:id="@+id/editText_newPasswordChange"

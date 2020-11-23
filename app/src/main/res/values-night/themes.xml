@@ -6,8 +6,8 @@
         <item name="colorAccent">#ffffff</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowBackground">@color/appBackgroundThemeRed</item>
-        <item name="android:colorBackground">@color/appBackgroundThemeRed</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:colorBackground">@color/black</item>
     </style>
 
     <!-- Menu Style -->
