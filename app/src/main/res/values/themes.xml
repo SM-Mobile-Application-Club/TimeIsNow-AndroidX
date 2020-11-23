@@ -6,8 +6,8 @@
         <item name="colorAccent">#ffffff</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowBackground">@color/appBackgroundThemeRed</item>
-        <item name="android:colorBackground">@color/appBackgroundThemeRed</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
     </style>
 
     <!-- Menu Style -->
@@ -16,7 +16,7 @@
         <!-- Color of text and icon when SELECTED -->
         <item name="colorPrimary">@color/appSecondaryColorRed</item>
         <!-- Background color when Selected -->
-        <item name="colorControlHighlight">#ffffff</item>
+        <item name="colorControlHighlight">@color/black</item>
 
     </style>
 

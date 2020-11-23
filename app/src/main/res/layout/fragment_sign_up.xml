@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/appBackgroundThemeRed"
+        android:background="@color/white"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -37,7 +37,7 @@
             android:id="@+id/Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="@color/black"
             android:text="@string/sign_up_to_start_your_journey"
             android:transitionName="text_description"
             android:textSize="16sp"/>
@@ -149,7 +149,7 @@
             <Button
                 android:id="@+id/button_backToSignIn"
                 android:layout_width="match_parent"
-                android:textColor="#ffffff"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:text="@string/already_have_an_account_log_in"
                 android:transitionName="button_newUser"
