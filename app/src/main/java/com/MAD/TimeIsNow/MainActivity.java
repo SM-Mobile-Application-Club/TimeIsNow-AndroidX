@@ -6,6 +6,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                             setNewPassword(code, task.getResult());
                                         else {
                                             Snackbar.make(findViewById(android.R.id.content), "Invalid link", Snackbar.LENGTH_SHORT).show();
-                                            navController.navigate(SplashFragmentDirections.SplashToAuth());
+                                            NoResetNavigation();
                                         }
                                     }
                                 });
@@ -84,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void setNewPassword(String code, String email) {
         navController.navigate(SplashFragmentDirections.SplashToReset(code, email, 0));
+    }
+
+    public void NoResetNavigation() {
+        if(this.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE).getBoolean("REMEMBER_ME", false)) navController.navigate(SplashFragmentDirections.SplashToHome());
+        else navController.navigate(SplashFragmentDirections.SplashToAuth());
     }
 
 }
