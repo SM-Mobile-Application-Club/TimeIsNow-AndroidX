@@ -9,19 +9,25 @@
     <LinearLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/appBackgroundThemeRed"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:windowBackground="@color/appBackgroundThemeRed"
-        android:colorBackground="@color/appBackgroundThemeRed"
         android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/imageView_signInLogo"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
-            android:transitionName="logo_image"
-            android:src="@drawable/redlogo"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appBackgroundThemeRed">
+
+            <ImageView
+                android:id="@+id/imageView_signInLogo"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:transitionName="logo_image"
+                android:src="@drawable/redlogo"/>
+
+        </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/textView_welcomeTitle"
@@ -99,7 +105,7 @@
                 <CheckBox
                     android:id="@+id/checkBox_rememberMe"
                     android:layout_width="wrap_content"
-                    android:buttonTint="#ffffff"
+                    android:buttonTint="@color/black"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"/>
                 <TextView
@@ -107,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/remember_me"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/black"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/checkBox_rememberMe"/>
 
@@ -117,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:elevation="0dp"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/black"
                     android:text="@string/forgot_password"
                     android:layout_marginEnd="-20dp"
                     android:layout_centerVertical="true"
@@ -145,10 +151,13 @@
                 android:transitionName="button_newUser"
                 android:background="@android:color/transparent"
                 android:text="@string/new_user_sign_up"
-                android:textColor="#ffffff"/>
+                android:textColor="@color/black"/>
+
 
         </LinearLayout>
 
     </LinearLayout>
+
+
 
 </FrameLayout>

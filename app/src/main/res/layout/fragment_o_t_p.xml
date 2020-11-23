@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="#fff"
     tools:context=".OTPFragment">
 
     <LinearLayout
@@ -38,7 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Verification"
+            android:text="@string/verification"
             android:textSize="24sp"
             android:textColor="#000"
             android:fontFamily="@font/bungee"
@@ -87,10 +87,11 @@
             android:id="@+id/button_resendCODE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#000"
+            android:textColor="#fff"
             android:text="Resend Code"
-            android:textAllCaps="false"
-            android:background="@android:color/transparent"/>
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/button_VerifyPhoneNumber"

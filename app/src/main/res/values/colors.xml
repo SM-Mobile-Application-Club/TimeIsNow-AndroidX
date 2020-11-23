@@ -7,4 +7,7 @@
     <color name="appSecondaryColor">#9ee5ff</color>
     <color name="appBackgroundThemeRed">#A0303C</color>
     <color name="appSecondaryColorRed">#D74653</color>
+    <color name="black">#000000</color>
+    <color name="white">#fff</color>
+
 </resources>

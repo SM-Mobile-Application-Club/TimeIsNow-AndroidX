@@ -17,4 +17,13 @@
     <string name="phone_number">Phone Number</string>
     <string name="sign_in_to_continue">Sign In to Continue</string>
     <string name="hello_there_welcome_back">Hello there, Welcome Back</string>
+    <string name="verification">Verification</string>
+    <string name="forget_password">forget Password</string>
+    <string name="Forget_Password_Description_Provide">Provide your accounts email for which you want to reset your password.</string>
+
+    <string name="next">Next</string>
+    <string name="ok">Ok</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="new_password">New Password</string>
+    <string name="verification_success">Your identity has been verified! Set your new password.</string>
 </resources>
