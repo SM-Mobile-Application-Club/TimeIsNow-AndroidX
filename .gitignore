@@ -94,3 +94,5 @@ lint/tmp/
 .settings/*
 .project
 .DS_Store
+
+app/google-services.json
