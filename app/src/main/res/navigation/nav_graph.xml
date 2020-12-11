@@ -63,6 +63,21 @@
             <action
                 android:id="@+id/action_OTPFragment_to_setPasswordFragment"
                 app:destination="@id/setPasswordFragment" />
+            <argument
+                android:name="phone"
+                app:argType="string" />
+            <argument
+                android:name="name"
+                app:argType="string" />
+            <argument
+                android:name="email"
+                app:argType="string" />
+            <argument
+                android:name="password"
+                app:argType="string" />
+            <argument
+                android:name="state"
+                app:argType="boolean" />
         </fragment>
     <navigation android:id="@+id/authentication"
         app:startDestination="@id/signInFragment">
@@ -80,6 +95,9 @@
                 app:launchSingleTop="true"
                 app:popUpTo="@id/nav_graph.xml"
                 app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_signUpFragment_to_OTPFragment"
+                app:destination="@id/OTPFragment" />
         </fragment>
         <fragment
             android:id="@+id/signInFragment"

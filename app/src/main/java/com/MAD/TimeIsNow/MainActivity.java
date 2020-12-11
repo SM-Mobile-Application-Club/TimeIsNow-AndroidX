@@ -32,50 +32,54 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        dynamicLinks.getDynamicLink(getIntent()).addOnSuccessListener(MainActivity.this, new OnSuccessListener<PendingDynamicLinkData>() {
-            @Override
-            public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
-                // Get deep link from result (may be null if no link is found)
-                Uri deepLink = null;
-                if (pendingDynamicLinkData != null) {
-                    deepLink = pendingDynamicLinkData.getLink();
-                }
 
-                if (deepLink != null) {
-                    ActionCodeUrl url = ActionCodeUrl.parseLink(deepLink.toString());
+        if (mAuth.getCurrentUser() != null) {
+            NoResetNavigation();
+        } else {
+            dynamicLinks.getDynamicLink(getIntent()).addOnSuccessListener(MainActivity.this, new OnSuccessListener<PendingDynamicLinkData>() {
+                @Override
+                public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
+                    // Get deep link from result (may be null if no link is found)
+                    Uri deepLink = null;
+                    if (pendingDynamicLinkData != null) {
+                        deepLink = pendingDynamicLinkData.getLink();
+                    }
 
-                    int operation = url.getOperation();
-                    String code = url.getCode();
+                    if (deepLink != null) {
+                        ActionCodeUrl url = ActionCodeUrl.parseLink(deepLink.toString());
 
-                    if (operation == 0) {
-                        mAuth.verifyPasswordResetCode(code)
-                                .addOnCompleteListener(new OnCompleteListener<String>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<String> task) {
-                                        if (task.isSuccessful())
-                                            setNewPassword(code, task.getResult());
-                                        else {
-                                            Snackbar.make(findViewById(android.R.id.content), "Invalid link", Snackbar.LENGTH_SHORT).show();
-                                            NoResetNavigation();
+                        int operation = url.getOperation();
+                        String code = url.getCode();
+
+                        if (operation == 0) {
+                            mAuth.verifyPasswordResetCode(code)
+                                    .addOnCompleteListener(new OnCompleteListener<String>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<String> task) {
+                                            if (task.isSuccessful())
+                                                setNewPassword(code, task.getResult());
+                                            else {
+                                                Snackbar.make(findViewById(android.R.id.content), "Invalid link", Snackbar.LENGTH_SHORT).show();
+                                                NoResetNavigation();
+                                            }
                                         }
-                                    }
-                                });
+                                    });
+                        } else
+                            NoResetNavigation();
+                    } else {
+                        Log.d("Dynamic Link Hook", "Received Deep Link Data: " + null);
+                        NoResetNavigation();
                     }
-                    else
-                        navController.navigate(SplashFragmentDirections.SplashToAuth());
-                } else {
-                    Log.d("Dynamic Link Hook", "Received Deep Link Data: " + null);
-                    navController.navigate(SplashFragmentDirections.SplashToAuth());
                 }
-            }
-        })
-                .addOnFailureListener(MainActivity.this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Dynamic Link Hook", "getDynamicLink:onFailure", e);
-                        navController.navigate(SplashFragmentDirections.SplashToAuth());
-                    }
-                });
+            })
+                    .addOnFailureListener(MainActivity.this, new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w("Dynamic Link Hook", "getDynamicLink:onFailure", e);
+                            NoResetNavigation();
+                        }
+                    });
+        }
     }
 
     @Override
@@ -87,8 +91,9 @@ public class MainActivity extends AppCompatActivity {
         navController.navigate(SplashFragmentDirections.SplashToReset(code, email, 0));
     }
 
+
     public void NoResetNavigation() {
-        if(this.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE).getBoolean("REMEMBER_ME", false)) navController.navigate(SplashFragmentDirections.SplashToHome());
+        if(mAuth.getCurrentUser() != null) navController.navigate(SplashFragmentDirections.SplashToHome());
         else navController.navigate(SplashFragmentDirections.SplashToAuth());
     }
 

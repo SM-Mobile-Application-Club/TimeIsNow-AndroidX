@@ -25,6 +25,7 @@ import com.github.razir.progressbutton.ProgressParams;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -130,10 +131,6 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
         String email = binding.email.getEditText().getText().toString().trim();
         String password = binding.password.getEditText().getText().toString().trim();
 
-        //Remember Me Stuff
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-        if (binding.checkBoxRememberMe.isChecked()) sharedPreferences.edit().putBoolean("REMEMBER_ME", true).apply();
-        else sharedPreferences.edit().putBoolean("REMEMBER_ME", false).apply();
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
