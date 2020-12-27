@@ -1,7 +1,5 @@
 package com.MAD.TimeIsNow;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -19,8 +17,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.MAD.TimeIsNow.databinding.FragmentSignUpBinding;
-import com.MAD.TimeIsNow.helper.PhoneNumberTextWatcher;
-import com.MAD.TimeIsNow.helper.shortcuts;
+import com.MAD.TimeIsNow.utilities.ActivityInterface;
+import com.MAD.TimeIsNow.utilities.PhoneNumberTextWatcher;
+import com.MAD.TimeIsNow.utilities.shortcuts;
 import com.github.razir.progressbutton.DrawableButton;
 import com.github.razir.progressbutton.DrawableButtonExtensionsKt;
 import com.github.razir.progressbutton.ProgressParams;
@@ -32,12 +31,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.i18n.phonenumbers.AsYouTypeFormatter;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
 
-import java.util.concurrent.Executor;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -48,6 +45,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     private FragmentSignUpBinding binding;
     private NavController navController;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private ActivityInterface listener;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -64,6 +62,11 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 
 
         binding.newPhoneNumber.getEditText().addTextChangedListener(new PhoneNumberTextWatcher(binding.newPhoneNumber));
+
+        try{
+            listener = (ActivityInterface) getContext();
+        }
+        catch(ClassCastException ignored) {}
     }
 
     @Override
@@ -198,7 +201,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
                                                     Log.d(TAG, "User profile updated.");
-                                                    openHome();
+                                                    listener.ToHome();
                                                 }
                                             }
                                         });
@@ -226,10 +229,6 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                         }
                     });
         }
-    }
-
-    public void openHome() {
-        navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToHomeFragment());
     }
 
     public void openSignIn() {

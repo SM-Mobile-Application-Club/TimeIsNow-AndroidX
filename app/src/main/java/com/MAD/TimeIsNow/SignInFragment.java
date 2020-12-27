@@ -18,7 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.MAD.TimeIsNow.R;
+import com.MAD.TimeIsNow.SignInFragmentDirections;
 import com.MAD.TimeIsNow.databinding.FragmentSignInBinding;
+import com.MAD.TimeIsNow.utilities.ActivityInterface;
 import com.github.razir.progressbutton.DrawableButton;
 import com.github.razir.progressbutton.DrawableButtonExtensionsKt;
 import com.github.razir.progressbutton.ProgressParams;
@@ -38,6 +41,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
     private FragmentSignInBinding binding;
     private NavController navController;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private ActivityInterface listener;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +56,11 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
         binding.buttonForgotPassword.setOnClickListener(this);
         binding.buttonLogin.setOnClickListener(this);
         navController = Navigation.findNavController(view);
+
+        try{
+            listener = (ActivityInterface) getContext();
+        }
+        catch(ClassCastException ignored) {}
     }
 
     @Override
@@ -186,7 +195,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
     }
 
     public void openHome() {
-        navController.navigate(SignInFragmentDirections.actionSignInFragmentToHomeFragment());
+       listener.ToHome();
     }
 
     public void openSignUp() {

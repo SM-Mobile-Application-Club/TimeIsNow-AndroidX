@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_reset"
+    app:startDestination="@id/setPasswordFragment">
+
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.MAD.TimeIsNow.SetPasswordFragment"
+        android:label="fragment_set_password"
+        tools:layout="@layout/fragment_set_password" >
+        <action
+            android:id="@+id/action_setPasswordFragment_to_passwordSuccessFragment"
+            app:destination="@id/passwordSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordSuccessFragment"
+        android:name="com.MAD.TimeIsNow.PasswordSuccessFragment"
+        android:label="fragment_password_success"
+        tools:layout="@layout/fragment_password_success" />
+</navigation>
