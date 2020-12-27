@@ -1,4 +1,4 @@
-package com.MAD.TimeIsNow.helper;
+package com.MAD.TimeIsNow.utilities;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;

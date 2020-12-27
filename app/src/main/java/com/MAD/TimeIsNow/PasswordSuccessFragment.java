@@ -14,11 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.MAD.TimeIsNow.databinding.FragmentPasswordSuccessBinding;
+import com.MAD.TimeIsNow.utilities.ActivityInterface;
 
 public class PasswordSuccessFragment extends Fragment implements View.OnClickListener{
 
     private NavController navController;
     private FragmentPasswordSuccessBinding binding;
+    private ActivityInterface listener;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,12 +42,18 @@ public class PasswordSuccessFragment extends Fragment implements View.OnClickLis
         return v;
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
         binding.buttonForgetPasswordLoginScreen.setOnClickListener(this);
+
+        try{
+            listener = (ActivityInterface) getContext();
+        }
+        catch(ClassCastException ignored) {}
     }
 
     @Override
@@ -56,6 +64,9 @@ public class PasswordSuccessFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-
+        int id = view.getId();
+        if (id == R.id.button_forgetPasswordLoginScreen) {
+            listener.ToHome();
+        }
     }
 }

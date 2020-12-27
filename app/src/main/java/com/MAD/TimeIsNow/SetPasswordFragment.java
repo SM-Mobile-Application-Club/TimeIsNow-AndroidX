@@ -36,47 +36,30 @@ public class SetPasswordFragment extends Fragment implements View.OnClickListene
 
     private NavController navController;
     private FragmentSetPasswordBinding binding;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private String code, email;
     private int flow;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private PhoneAuthCredential cred;
     private static final String TAG = "SetNewPassword";
-
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSetPasswordBinding.inflate(inflater, container, false);
-        View v = binding.getRoot();
-        v.setFocusableInTouchMode(true);
-        v.requestFocus();
-        v.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    if (keyCode == KeyEvent.KEYCODE_BACK) {
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
-        return v;
+        flow = getArguments().getInt("flow");
+
+        if (flow == 2 && mAuth.getCurrentUser() == null) {
+            code = getArguments().getString("code");
+            email = getArguments().getString("email");
+        }
+
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
-
-
-        flow = SetPasswordFragmentArgs.fromBundle(getArguments()).getFlow();
-        if (flow == 0 && mAuth.getCurrentUser() == null) {
-            code = SetPasswordFragmentArgs.fromBundle(getArguments()).getCode();
-            email = SetPasswordFragmentArgs.fromBundle(getArguments()).getEmail();
-        }
         binding.buttonForgetPasswordNewPassword.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -214,7 +197,7 @@ public class SetPasswordFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.button_forgetPasswordNewPassword) {
-           if(flow == 0)resetPasswordEmail();
+           if(flow == 2)resetPasswordEmail();
            else resetPasswordPhone();
         }
     }

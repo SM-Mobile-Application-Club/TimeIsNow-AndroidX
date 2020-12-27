@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
-import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.MAD.TimeIsNow.utilities.ActivityInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActivityInterface {
     private NavController navController;
     private FirebaseDynamicLinks dynamicLinks = FirebaseDynamicLinks.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -88,13 +88,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setNewPassword(String code, String email) {
-        navController.navigate(SplashFragmentDirections.SplashToReset(code, email, 0));
+        Intent i = new Intent(this, ResetActivity.class);
+        i.putExtra("code", code);
+        i.putExtra("email", email);
+        i.putExtra("state", 2);
+        startActivity(i);
     }
 
+    public void navigateHome() {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+    }
 
     public void NoResetNavigation() {
-        if(mAuth.getCurrentUser() != null) navController.navigate(SplashFragmentDirections.SplashToHome());
-        else navController.navigate(SplashFragmentDirections.SplashToAuth());
+        if(mAuth.getCurrentUser() != null) navigateHome();
+        else navController.navigate(SplashFragmentDirections.actionSplashFragmentToSignInFragment());
     }
 
+    @Override
+    public void ToHome() {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+    }
 }
