@@ -1,0 +1,22 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+
+    <string-array name="dark_mode_entries">
+        <item>Just for Today</item>
+        <item>Always</item>
+    </string-array>
+
+    <string-array name="dark_mode_values">
+        <item>just_for_today</item>
+        <item>always</item>
+    </string-array>
+</resources>
