@@ -6,18 +6,16 @@
     <color name="colorAccent">#03DAC5</color>
 
     //Text Colors
-    <color name="mainText">#000000</color>
+    <color name="mainText">#ffffff</color>
     <color name="textAlt">#8D8F97</color>
-    
+
     //App Colors
-    <color name="background">#ffffff</color>
-    <color name="accentColor">#D74653</color>
-    <color name="darkAccentColor">#A0303C</color>
+    <color name="background">#121212</color>
+    <color name="accentColor">#BB86FC</color>
+    <color name="darkAccentColor">#3700B3</color>
 
     //Back up Colors
     <color name="secondaryBackground">#30819F</color>
     <color name="secondaryAccentColor">#9ee5ff</color>
-
-
 
 </resources>

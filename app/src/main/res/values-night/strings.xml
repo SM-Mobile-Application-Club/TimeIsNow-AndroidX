@@ -9,6 +9,7 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="remember_me">Remember Me</string>
     <string name="password">Password</string>
+    <string name="email">Email</string>
     <string name="welcome">Welcome</string>
     <string name="sign_up_to_start_your_journey">Sign Up to Start your Journey</string>
     <string name="full_name">Full Name</string>
@@ -16,4 +17,27 @@
     <string name="phone_number">Phone Number</string>
     <string name="sign_in_to_continue">Sign In to Continue</string>
     <string name="hello_there_welcome_back">Hello there, Welcome Back</string>
+    <string name="verification">Verification</string>
+    <string name="forget_password">forget Password</string>
+    <string name="Forget_Password_Description_Provide">Provide your accounts email for which you want to reset your password.</string>
+
+    <string name="next">Next</string>
+    <string name="ok">Ok</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="new_password">New Password</string>
+    <string name="verification_success">Your identity has been verified! Set your new password.</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
