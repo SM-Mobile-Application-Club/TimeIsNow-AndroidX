@@ -13,7 +13,7 @@
     <!-- Menu Style -->
     <style name="navigationTheme">
         <!-- Color of text and icon when SELECTED -->
-        <item name="colorPrimary">@color/appSecondaryColorRed</item>
+        <item name="colorPrimary">@color/accentColor</item>
         <!-- Background color when Selected -->
         <item name="colorControlHighlight">@color/black</item>
 

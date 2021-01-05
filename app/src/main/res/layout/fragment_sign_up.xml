@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/background"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -29,7 +29,7 @@
             android:fontFamily="@font/bungee"
             android:includeFontPadding="false"
             android:text="@string/welcome"
-            android:textColor="#000"
+            android:textColor="@color/mainText"
             android:textSize="40sp"
             android:transitionName="logo_text" />
 
@@ -37,7 +37,7 @@
             android:id="@+id/Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/mainText"
             android:text="@string/sign_up_to_start_your_journey"
             android:transitionName="text_description"
             android:textSize="16sp"/>
@@ -56,16 +56,18 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/full_name"
                 app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="#000"
-                app:boxBackgroundColor="@color/appSecondaryColorRed"
+                app:boxStrokeWidthFocused="3dp"
+                app:boxBackgroundColor="@color/background"
+                app:boxStrokeColor="@color/mainText"
+                android:textColorHint="@color/textAlt"
+                app:endIconMode="clear_text"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/appSecondaryColorRed"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
+                    android:textColor="@color/mainText"
+                    android:textColorHighlight="@color/accentColor"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -77,17 +79,19 @@
                 android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="#000"
-                app:boxBackgroundColor="@color/appSecondaryColorRed"
+                app:boxStrokeWidthFocused="3dp"
+                app:boxBackgroundColor="@color/background"
+                app:boxStrokeColor="@color/mainText"
+                android:textColorHint="@color/textAlt"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/email">
+                android:hint="@string/email"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/appSecondaryColorRed"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
+                    android:textColor="@color/mainText"
+                    android:textColorHighlight="@color/accentColor"
                     android:inputType="textEmailAddress"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -98,18 +102,20 @@
                 android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="#000"
-                app:boxBackgroundColor="@color/appSecondaryColorRed"
+                app:boxStrokeWidthFocused="3dp"
+                app:boxBackgroundColor="@color/background"
+                app:boxStrokeColor="@color/mainText"
+                android:textColorHint="@color/textAlt"
+                app:endIconMode="clear_text"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:hint="@string/phone_number">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/appSecondaryColorRed"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
-                    android:inputType="number"/>
+                    android:textColor="@color/mainText"
+                    android:textColorHighlight="@color/accentColor"
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -119,8 +125,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:boxStrokeWidth="2dp"
-                app:boxStrokeColor="#000"
-                app:boxBackgroundColor="@color/appSecondaryColorRed"
+                app:boxStrokeWidthFocused="3dp"
+                app:boxBackgroundColor="@color/background"
+                app:boxStrokeColor="@color/mainText"
+                android:textColorHint="@color/textAlt"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:passwordToggleEnabled="true"
                 android:transitionName="text_password"
@@ -129,9 +137,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/appSecondaryColorRed"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
+                    android:textColor="@color/mainText"
+                    android:textColorHighlight="@color/accentColor"
                     android:inputType="textPassword"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -140,16 +147,16 @@
                 android:id="@+id/button_createNewUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#000"
+                android:background="@color/accentColor"
                 android:text="@string/go"
                 android:layout_marginTop="10dp"
                 android:transitionName="button_go"
-                android:textColor="#FFF" />
+                android:textColor="@color/background" />
 
             <Button
                 android:id="@+id/button_backToSignIn"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
+                android:textColor="@color/mainText"
                 android:layout_height="wrap_content"
                 android:text="@string/already_have_an_account_log_in"
                 android:transitionName="button_newUser"

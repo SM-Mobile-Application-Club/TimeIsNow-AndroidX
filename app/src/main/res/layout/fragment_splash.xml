@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashFragment"
-    android:background="@color/appBackgroundThemeRed">
+    android:background="@color/darkAccentColor">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,7 +35,7 @@
             android:textSize="70sp"
             android:transitionName="logo_text"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="#ffffff"
+            android:textColor="@color/mainText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView_SplashLogo" />
 
