@@ -51,8 +51,8 @@ dependencies {
     // Android X
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation "androidx.navigation:navigation-fragment:2.3.1"
-    implementation "androidx.navigation:navigation-ui:2.3.1"
+    implementation "androidx.navigation:navigation-fragment:2.3.2"
+    implementation "androidx.navigation:navigation-ui:2.3.2"
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
@@ -66,7 +66,7 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.1'
 
     // Firebase
-    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
@@ -85,8 +85,4 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.8.1'
     // Phone Number
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.8'
-
-
-
-
 }

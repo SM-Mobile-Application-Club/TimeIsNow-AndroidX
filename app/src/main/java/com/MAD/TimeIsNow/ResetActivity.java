@@ -30,6 +30,14 @@ public class ResetActivity extends AppCompatActivity implements ActivityInterfac
     @Override
     public void ToHome() {
         Intent i = new Intent(this, HomeActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
+    }
+
+    @Override
+    public void ToSetPassword() {
+        Intent i = new Intent(this, ResetActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
     }
 }

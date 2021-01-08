@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.MAD.TimeIsNow.utilities.ActivityInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 
-public class MainActivity extends AppCompatActivity implements ActivityInterface {
+public class MainActivity extends AppCompatActivity {
     private NavController navController;
     private FirebaseDynamicLinks dynamicLinks = FirebaseDynamicLinks.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -105,9 +104,4 @@ public class MainActivity extends AppCompatActivity implements ActivityInterface
         else navController.navigate(SplashFragmentDirections.actionSplashFragmentToSignInFragment());
     }
 
-    @Override
-    public void ToHome() {
-        Intent i = new Intent(this, HomeActivity.class);
-        startActivity(i);
-    }
 }
